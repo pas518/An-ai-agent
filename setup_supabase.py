@@ -5,7 +5,7 @@ import os
 
 def setup_supabase():
     print("=" * 60)
-    print("🔗 Supabase Database Setup")
+    print(" Supabase Database Setup")
     print("=" * 60)
     print()
     
@@ -46,7 +46,7 @@ def setup_supabase():
     
     else:
         print()
-        print("✅ Will use SQLite (local database)")
+        print(" Will use SQLite (local database)")
         print("You can set up Supabase later by creating a .env file")
         return
     
@@ -57,17 +57,18 @@ def setup_supabase():
             f.write('\n')
         
         print()
-        print("✅ Configuration saved to .env file")
+        print(" Configuration saved to .env file")
         print()
         print("Next steps:")
         print("1. Install dependencies: pip install -r requirements.txt")
         print("2. Start server: python app.py")
-        print("3. You should see: '✅ Connected to Supabase (PostgreSQL)'")
+        print("3. You should see: ' Connected to Supabase (PostgreSQL)'")
     else:
         print()
-        print("⚠️ No configuration saved. Using SQLite.")
+        print(" No configuration saved. Using SQLite.")
 
 if __name__ == "__main__":
     setup_supabase()
+
 
 
