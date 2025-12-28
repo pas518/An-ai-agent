@@ -1,6 +1,8 @@
 """
 AI KNOWLEDGE AGENT WITH STRUCTURED DICTIONARY OUTPUT
 Retrieves context from FAISS index and generates structured responses
+used dataclass for better structure
+Note: do not forget to run ingest.py file before this file-to extact data
 """
 
 import faiss
@@ -103,9 +105,9 @@ try:
     
     texts = store["texts"]
     metadata = store["metadata"]
-    print(f"✅ Loaded {len(texts)} documents")
+    print(f" Loaded {len(texts)} documents")
 except Exception as e:
-    print(f"❌ Error loading index: {e}")
+    print(f" Error loading index: {e}")
     print("   Make sure index.faiss and metadata.pkl exist")
     exit(1)
 
@@ -120,7 +122,7 @@ def get_embedding(text: str) -> np.ndarray:
         response = requests.post(
             "http://localhost:11434/api/embeddings",
             json={
-                "model": "llama3.2",
+                "model": "llama3.2", # see the README.md file for more information to better perfomance
                 "prompt": text
             },
             timeout=30
@@ -128,7 +130,7 @@ def get_embedding(text: str) -> np.ndarray:
         response.raise_for_status()
         return np.array(response.json()["embedding"], dtype="float32")
     except Exception as e:
-        print(f"⚠️  Embedding error: {e}")
+        print(f"  Embedding error: {e}")
         return np.zeros(4096, dtype="float32")  # Fallback
 
 
@@ -160,7 +162,7 @@ def call_ollama(prompt: str, extract_json: bool = True) -> str:
         
         return result
     except Exception as e:
-        print(f"⚠️  Ollama error: {e}")
+        print(f"  Ollama error: {e}")
         return json.dumps({
             "answer": f"Error: {str(e)}",
             "confidence": "low",
@@ -360,7 +362,7 @@ def run_interactive_agent():
         question = input("\n❓ Ask a question: ")
         
         if question.lower() == "exit":
-            print("\n👋 Goodbye!")
+            print("\n Goodbye!")
             break
         
         if question.lower() == "raw":
@@ -424,4 +426,5 @@ if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "example":
         run_example()
     else:
+
         run_interactive_agent()
