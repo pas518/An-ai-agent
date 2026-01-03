@@ -1,0 +1,17 @@
+Case ID: CLM-2024-001
+Claim Type: Auto Insurance
+State: California
+Policy Type: Individual
+Claim Amount: $15,000.00
+Filed Date: 12/25/2024
+
+Case Description:
+Vehicle accident occurred on Highway 101. Driver was rear-ended
+by another vehicle. Vehicle damage estimated at $15,000.
+Special flags: Urgent, Review required.
+
+Additional Information:
+The incident occurred at approximately 3:45 PM on December 20, 2024.
+Weather conditions were clear. No injuries reported.
+Police report number: PR-2024-5678.
+

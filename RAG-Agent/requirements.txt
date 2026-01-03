@@ -1,0 +1,119 @@
+# ============================================================================
+# RAG Agent - Python Dependencies
+# ============================================================================
+#
+# Installation:
+#   pip install -r requirements.txt
+#
+# Or install individually:
+#   pip install PyMuPDF faiss-cpu numpy requests
+#
+# ============================================================================
+
+# PDF Processing
+# Used by: ingest.py to extract text from PDF documents
+PyMuPDF==1.23.8
+
+# Vector Database (CPU version)
+# Used by: ingest.py and agent.py for semantic search
+# Note: Use faiss-gpu if you have NVIDIA GPU for faster performance
+faiss-cpu==1.7.4
+
+# Numerical Computing
+# Used by: All files for array operations and embeddings
+numpy==1.24.3
+
+# HTTP Requests
+# Used by: All files to communicate with Ollama API
+requests==2.31.0
+
+# ============================================================================
+# Optional Dependencies (Uncomment if needed)
+# ============================================================================
+
+# GPU Acceleration (if you have NVIDIA GPU)
+# faiss-gpu==1.7.4
+
+# Better PDF handling for complex documents
+# pypdf2==3.0.1
+
+# OCR for image-based PDFs (requires Tesseract installed)
+# pytesseract==0.3.10
+# pdf2image==1.16.3
+
+# Progress bars for ingestion
+# tqdm==4.66.1
+
+# Better error messages
+# rich==13.7.0
+
+# JSON handling (usually included with Python)
+# json5==0.9.14
+
+# ============================================================================
+# Version Notes
+# ============================================================================
+#
+# PyMuPDF 1.23.8:
+#   - Stable release
+#   - Good PDF text extraction
+#   - Works with most PDF formats
+#
+# faiss-cpu 1.7.4:
+#   - CPU-only version (no GPU needed)
+#   - Smaller install size (~50MB)
+#   - Good for development and small datasets
+#
+# numpy 1.24.3:
+#   - Compatible with Python 3.8-3.11
+#   - Stable release
+#
+# requests 2.31.0:
+#   - Latest stable
+#   - Good for Ollama API calls
+#
+# ============================================================================
+# Compatibility
+# ============================================================================
+#
+# Python Version: 3.8 or higher (3.8, 3.9, 3.10, 3.11)
+# Operating System: Windows, macOS, Linux
+# Memory: Minimum 4GB RAM (8GB+ recommended for large PDFs)
+# Disk Space: ~200MB for dependencies + index size
+#
+# ============================================================================
+# External Requirements
+# ============================================================================
+#
+# Ollama:
+#   - Must be installed separately
+#   - Download from: https://ollama.com
+#   - Run: ollama serve
+#   - Pull model: ollama pull llama3.2
+#
+# ============================================================================
+# Troubleshooting
+# ============================================================================
+#
+# If installation fails:
+#
+# 1. Upgrade pip:
+#    python -m pip install --upgrade pip
+#
+# 2. Install with no cache:
+#    pip install --no-cache-dir -r requirements.txt
+#
+# 3. Install individually:
+#    pip install PyMuPDF
+#    pip install faiss-cpu
+#    pip install numpy
+#    pip install requests
+#
+# 4. For FAISS issues on Windows:
+#    pip install faiss-cpu --no-binary faiss-cpu
+#
+# 5. For Mac M1/M2 (Apple Silicon):
+#    Use conda instead:
+#    conda install -c conda-forge faiss-cpu
+#
+# ============================================================================

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI File Processing Agent - Intelligent Document Analysis</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI File Processing Agent</h1>
+            <p>Intelligent document analysis with structured data extraction</p>
+            <div class="agent-badge">Powered by AI • Automated Data Extraction</div>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-card">
+                <div class="upload-header">
+                    <h2>📄 Text Files</h2>
+                </div>
+                <div class="upload-area" data-type="text">
+                    <input type="file" id="textInput" accept=".txt,.md,.doc,.docx" multiple>
+                    <label for="textInput" class="upload-label">
+                        <div class="upload-icon">📄</div>
+                        <div class="upload-text">
+                            <span class="upload-title">Click to upload text files</span>
+                            <span class="upload-subtitle">TXT, MD, DOC, DOCX</span>
+                        </div>
+                    </label>
+                    <div class="file-list" id="textFiles"></div>
+                </div>
+            </div>
+
+            <div class="upload-card">
+                <div class="upload-header">
+                    <h2>🖼️ Image Files</h2>
+                </div>
+                <div class="upload-area" data-type="image">
+                    <input type="file" id="imageInput" accept="image/*" multiple>
+                    <label for="imageInput" class="upload-label">
+                        <div class="upload-icon">🖼️</div>
+                        <div class="upload-text">
+                            <span class="upload-title">Click to upload images</span>
+                            <span class="upload-subtitle">PNG, JPG, JPEG, GIF, WEBP</span>
+                        </div>
+                    </label>
+                    <div class="file-list" id="imageFiles"></div>
+                </div>
+            </div>
+
+            <div class="upload-card">
+                <div class="upload-header">
+                    <h2>🎵 Audio Files</h2>
+                </div>
+                <div class="upload-area" data-type="audio">
+                    <input type="file" id="audioInput" accept="audio/*" multiple>
+                    <label for="audioInput" class="upload-label">
+                        <div class="upload-icon">🎵</div>
+                        <div class="upload-text">
+                            <span class="upload-title">Click to upload audio</span>
+                            <span class="upload-subtitle">MP3, WAV, OGG, FLAC, M4A</span>
+                        </div>
+                    </label>
+                    <div class="file-list" id="audioFiles"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stats-card">
+                <h3>📊 Statistics</h3>
+                <div id="statsContent" class="stats-content">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Files:</span>
+                        <span class="stat-value" id="totalFiles">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Training Completed:</span>
+                        <span class="stat-value" id="completedTraining">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="files-section">
+            <div class="section-header">
+                <h2>📋 Uploaded Files</h2>
+                <div class="header-actions">
+                    <button id="refreshBtn" class="btn-secondary">🔄 Refresh</button>
+                    <button id="viewHistoryBtn" class="btn-secondary">📜 View History</button>
+                </div>
+            </div>
+            <div id="filesList" class="files-list"></div>
+        </div>
+
+        <div class="history-section" id="historySection" style="display: none;">
+            <div class="section-header">
+                <h2>📜 Training History</h2>
+                <button id="closeHistoryBtn" class="btn-secondary">✕ Close</button>
+            </div>
+            <div id="historyList" class="history-list"></div>
+        </div>
+
+        <div id="notification" class="notification"></div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
+
